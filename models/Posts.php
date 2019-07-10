@@ -40,6 +40,12 @@ class Posts
 		$image = $conn->real_escape_string($image);
 		$category = $conn->real_escape_string($category);
 
+		$title = htmlspecialchars($title);
+		$body = htmlspecialchars($body);
+		$image = htmlspecialchars($image);
+		$category = htmlspecialchars($category);
+
+
 
 		$query = 'insert into posts (title, body, post_image, category_id, user_id) values("'.$title.'", "'.$body.'", "'.$image.'", '.$category.', '.$user_id.')';
 		var_dump($query);

@@ -24,7 +24,6 @@
 				<?php if(isset($_SESSION['user'])) : ?>
 					<li><a href="<?php echo DOMAIN; ?>/page/posts/create">Create Post</a></li>		
 				<?php endif; ?>				
-				<!-- <li><a href="<?php //echo DOMAIN; ?>/page/categories/create">Create Category</a></li> PREBACITI ZA ADMINA-->
 				<?php if(isset($_SESSION['user'])) : ?>
 					<li><a href="<?php echo DOMAIN; ?>/page/users/logout">Logout</a></li>
 				<?php endif; ?>

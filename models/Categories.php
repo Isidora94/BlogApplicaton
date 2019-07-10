@@ -34,6 +34,7 @@ class Categories
 		global $conn;
 
 		$name = $conn->real_escape_string($name);
+		$name = htmlspecialchars($name);
 
 		$query = 'insert into categories (name) values("'.$name.'")';
 		var_dump($query);

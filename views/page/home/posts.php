@@ -1,25 +1,28 @@
 <div class="container">
-	<h1><?php echo $this->data['title']; ?></h1>
+		<h1 style="text-align: center;"><?php echo $this->data['title']; ?></h1>
+	<div class="wrap">
 
-	<?php foreach ($this->data['posts'] as $post): ?>
+		<?php foreach ($this->data['posts'] as $post): ?>
 
-		<div class="post">
-			<h2><?php echo $post->title; ?></h2>
-			<img class="img" src="<?php echo DOMAIN; ?>/<?php echo $post->post_image; ?>">
-			<div class="post_info">
-				<small>Posted on: <strong><?php echo $post->created_at; ?></strong> in category: <strong><?php echo $post->name; ?></strong></small><br>
-				<p><?php echo mb_strimwidth($post->body, 0, 60); ?></p>
-				<br>
-				<br>
-				<p><a class="btn" href="<?php echo DOMAIN.'/page/posts/view/'.$post->id; ?>">Read More</a></p>
+			<div class="post">
+			<a href="<?php echo DOMAIN.'/page/posts/view/'.$post->id; ?>">
+				<div class="post_info">
+					<img class="img" src="<?php echo DOMAIN; ?>/<?php echo $post->post_image; ?>">
+					<h2><?php echo htmlspecialchars_decode(ucfirst($post->title)); ?></h2>
+					<p><?php echo htmlspecialchars_decode(mb_strimwidth($post->body, 0, 60)); ?>...</p>
+					<br>
+					<br>
+					<small><?php echo $post->created_at; ?>/<strong><?php echo $post->name; ?></strong></small>
+					<!-- <p><a class="btn" href="<?php echo DOMAIN.'/page/posts/view/'.$post->id; ?>">Read More</a></p> -->
+				</div>
+			</a>	
 			</div>
-		</div>
-		<hr style="margin-bottom: 40px;">
 
-	<?php endforeach; ?>
 
+		<?php endforeach; ?>
+
+	</div>
 </div>
-
 
 
 <a class="back_to_top" href="#"><span>&uarr;</span></a>
@@ -60,7 +63,7 @@
 
 	<div class="register">
 		<form action="users/register" method="post" enctype="multipart/form-data">
-			<h2>Register</h2>
+			<h2>Sign Up!</h2>
 
 			<div class="form-article">
 				<label for="first_name">First name:</label>
@@ -101,7 +104,7 @@
 				<p></p>
 			</div>
 			<div class="form-article">
-				<label for="re_password">Re_Type Password:</label>
+				<label for="re_password">Confirm Password:</label>
 				<input type="password" name="re_password" id="re_password">
 				<p></p>
 			</div>

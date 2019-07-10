@@ -26,13 +26,13 @@
 					<option value="<?php echo $category->id; ?>"><?php echo $category->name; ?></option>
 				<?php endforeach; ?>
 			</select>
-			<small style="color: grey; background-color: white;">Please note if you don't pick category of post, it will be setted by default.</small>
+			<small style="color: grey;">Please note if you don't pick category of post, it will be setted by default.</small>
 		</div>
 
 		<div class="form-member">
 			<label>Upload Image</label>
 			<input type="file" name="post_image">
-			<small style="color: grey; background-color: white;">Please note, if you don't load your image, it will be setted by default.</small>
+			<small style="color: grey;">Please note, if you don't load your image, it will be setted by default.</small>
 		</div>
 		<button type="submit" class="btn create_btn">Submit</button>
 	</form>

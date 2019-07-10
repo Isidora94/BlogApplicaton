@@ -17,6 +17,9 @@
 				<?php endif; ?>			
 				<?php if(isset($_SESSION['admin'])): ?>
 					<li><a href="<?php echo DOMAIN; ?>/admin/users">Users</a></li>
+				<?php endif; ?>		
+				<?php if(isset($_SESSION['admin'])): ?>
+					<li><a href="<?php echo DOMAIN; ?>/admin/pages">Fill Pages</a></li>
 				<?php endif; ?>
 			</ul>
 			<ul class="right_nav">

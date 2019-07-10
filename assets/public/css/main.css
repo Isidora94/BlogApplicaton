@@ -1,18 +1,48 @@
 @import url('https://fonts.googleapis.com/css?family=Noto+Serif&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Tangerine:700&display=swap');
 body{
 	margin: 0;
 	padding: 0;
 	font-family: 'Noto Serif', serif;
+	background-image: url('../../images/image.jpg');
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center;
+	/*height: 100%;*/
+	background-size: cover;
 }
 .container{
 	width: 90%;
 	margin: 0 auto;
 }
 
+.wrapper{
+	width: 100%;
+	margin: 0 auto;
+}
+.wrapper div{
+	float: left;
+}
+.wrapper div img{
+	width: 33%;
+}
+
+.quote{
+	width: 100%;
+	text-align: center;
+	font-size: 45px;
+	font-family: 'Tangerine', cursive;
+}
+.about{
+	width: 30%;
+	/*text-align: left;*/
+}
 /*STYLISH HEADER*/
 header{
 	width: 100%;
-	background-color: #18bc9c;
+	/*background-color: #18bc9c;*/
+	background-color: rgba(0, 0, 0, 0.7);
+	/*background-color: transparent;*/
 	height: 60px;
 }
 .blog_link{
@@ -24,12 +54,14 @@ header a{
 	text-decoration: none;
 	font-size: 15px;
 	color: #fff; 
+	/*color: #000; */
 	padding: 10px;
+	/*font-size: 20px;*/
 }
 
 header a:hover{
-	font-size: 20px;
-	color: #146b6b;
+	/*font-size: 20px;*/
+	/*color:  #ff80bf;*/
 }
 header ul{
 	display: inline;
@@ -52,31 +84,66 @@ header ul li{
 }
 
 h1{
+	/*font-size: 30px;*/
 	text-shadow: 5px 5px 5px grey;
 	/*display: inline;*/
 }
 
 /*STYLISH BLOG PAGE (view-posts.php)*/
-
-.post{
-	font-style: initial;
+.wrap{
 	width: 100%;
-	height: 300px;
-
+	height: auto;
+	text-align: center;
+	display: flex;
+	flex-direction: row;
+	/*justify-content: space-around;*/
+	flex-flow: wrap;
 }
 .img{
-	float: left;
+	/*float: left;*/
+	width: 80%;
+	height: 200px;	
+	/*width: 100%;*/
+	/*height: 80%;	*/
+	/*height: 200px;	*/
+	/*display: inline;*/
+	/*position: relative;*/
+}
+.post{
+	/*display: inline-block;*/
+	/*display: table-cell;*/
+	/*flex: 1;*/
+	/*padding: 16px;*/
+	/*position: relative;	*/
+	/*font-style: initial;*/
 	width: 20%;
-	height: 80%;
+	margin: 20px;
+	height: 500px;
+	box-sizing: border-box;
+	/*overflow: hidden;*/
+	/*width: 20%;*/
+	/*height: 300px;*/
+	/*background: yellow;*/
+	/*margin: 20px;*/
+
+}
+.post a{
+	text-decoration: none;
+	color: #000;
+	/*height: 200px;*/
 }
 .post_info{
-	font-weight: initial;
-	float: right;
-	width: 75%;
+	box-sizing: border-box;
+	background-color: rgba(255,255,255,0.8);
+	/*position: absolute;*/
+	/*font-weight: initial;*/
+	/*top: 0;*/
+	border-radius: 5px;
+
 }
 small{
 	display: block;
-	background-color: #f4f4f4;
+	/*background-color: #f4f4f4;*/
 }
 
 /*STYLISH HEIGHT AND WIDTH OF ALL IMAGES ON SITE exept latest posts images*/
@@ -85,14 +152,6 @@ img{
 	width: 300px;
 }
 
-#profile_picture{
-	/*display: inline;*/
-	height: 150px;
-	width: 150px;
-	border: 2px solid blue;
-	margin-left: 80%;
-	/*margin-bottom: 100%;*/
-}
 
 .user_data{
 	width: 50%;
@@ -108,19 +167,20 @@ img{
 .btn{
 	text-decoration: none;
 	color: #fff;
-	border: 1px solid grey;
+	border: 1px solid #000;
 	padding: 6px;
 	border-radius: 10px;
-	background-color: #2c3e50;
+	margin-top: 5px;
+	background: linear-gradient(to bottom left, #000 0%, #808080 70%);
 }
 .btn:hover{
-	background-color: #141a1f;
+	/*background-color: #141a1f;*/
 	cursor: pointer;
 }
 
 /*STYLISH delete btn*/
 button.btn_delete{
-	background-color: #630017;
+	background: linear-gradient(to bottom left, #000 0%, #d92626 70%);
 	margin-left: 45%;
 	font-size: 15px;
 	height: 36px; 
@@ -136,7 +196,7 @@ button.btn_delete{
 	padding-bottom: 10px; 
 }
 .category_group > li > a{
-	color: #18bca8;
+	color: #000;
 	text-decoration: none;
 }
 .category_group > li > a:hover{
@@ -146,7 +206,9 @@ button.btn_delete{
 
 
 /*STYLISH FORM FOR CREATING NEW POSTS (in home-create.php)*/
-
+form{
+	/*background-color: rgba(0, 0, 0, 0.7);*/
+}
 .form-member{
 	padding: 20px;
 }
@@ -156,7 +218,6 @@ button.btn_delete{
 .form-member > input{
 	width: 100%;
 	height: 30px;
-	/*color: #f8f8f8; ovo je boja ck editora*/
 }
 .form-member > textarea{
 	width: 100%;
@@ -181,7 +242,6 @@ option{
 	font-size: 15px;
 }
 
-
 /*STYLISH ERRORS IN CRETE NEW POST VIEW*/
 
 #errorContainer {
@@ -195,6 +255,35 @@ option{
 #errorContainer label {
 	float: none;
 	width: auto;
+}
+
+/*PROFILE INFO*/
+
+#user_info{
+	/*display: inline;*/
+	position: absolute;
+	top: 70px;
+	right: 20px;
+	height: 150px;
+	width: 400px;
+	background-color: #fff;
+	/*border: 1px solid black;*/
+}
+#user_info > div{
+	width: 50%;
+	float: left;
+}
+#user_info > div p{
+	text-align: right;
+	font-style: italic;
+	
+}
+
+#user_info > img{
+	float: right;
+	border: 2px solid grey;
+	width: 150px;
+	height: 150px;
 }
 
 
@@ -273,6 +362,10 @@ option{
 
 /*STYLISH POP UP FORM FOR REGISTER AND LOG IN*/
 .pop-up-form{
+/*	background-image: url('../../images/splash.jpeg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: left;*/
 	text-align: center;
 	position: fixed;
 	top: 50%;
@@ -282,7 +375,7 @@ option{
 	border: 1px solid grey;
 	border-radius: 10px;
 	z-index: 10;
-	background-color: #C0C0C0;
+	background-color: rgba(255,255,255);
 	height: 90%;
 	width: 50%;
 }
@@ -301,8 +394,8 @@ option{
 	display: inline-block;
 	width: 20px;
 	position: relative;
-	left: 370px;
-	bottom: 10px;
+	left: 365px;
+	bottom: 15px;
 }
 
 .pop-up-form  p{
@@ -338,9 +431,18 @@ option{
 
 .form-article > label{
 	display: block;
+	color: grey;
 }
-.form-article{
-	margin-bottom: 3px;
+.form-article > input:not([type="file"]){
+	border: 0;
+	outline: 0;
+	border-bottom: 2px solid black;
+	text-align: center;
+	/*font-weight: bold;*/
+	font-size: 15px;
+}
+input:-webkit-autofill {
+	-webkit-box-shadow: 0 0 0px 1000px #fff inset;
 }
 
 
@@ -364,7 +466,8 @@ option{
 }
 
 @keyframes blinker {
-  50% {
-    opacity: 0;
- }
+	50% {
+		opacity: 0;
+	}
+
 

@@ -72,6 +72,8 @@ class EntityUsersController extends EntityBaseController
 			header('Location: http://final.com/page/posts?success=Successfully registreted!');
 			
 		}
+		$fileUpload = new UploadPostImage();
+		$fileUpload->upload($_FILES['user_image']);
 	}	
 
 	public function login()
@@ -118,15 +120,19 @@ class EntityUsersController extends EntityBaseController
 			$username = $_SESSION['user'];
 			$user = Users::getCurrentUser($username);
 			$user_id = $user->id;
-			$profile_picture = $user->user_image;
 
 			$view = new View();
+			$view->data['user'] = $user;
 			$view->data['title'] = ucfirst($username).'\'s Profile';
-			$view->data['profile_picture'] = $profile_picture;
 			$view->data['posts'] = Users::getPostsForUsers($user_id);
 			$view->data['categories'] = Categories::getAllCategories();
 
 			$view->load('users', 'profile', $this->accessability_scope);
+		}
+
+		public function change()
+		{
+			var_dump($_FILES);
 		}
 
 

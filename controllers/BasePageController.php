@@ -53,7 +53,11 @@ class BasePageController
 
 	public function home()
 	{
+		$page_model = new Pages();
+		$page = $page_model->getPageContent('home');
 		$view = new View();
+		$view->data['title'] = 'Home';
+		$view->data['content'] = $page->content;
 		$view->load('pages', 'home', false);
 	}
 

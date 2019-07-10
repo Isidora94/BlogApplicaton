@@ -81,7 +81,7 @@ class Users
 	public static function getCurrentUser($username)
 	{
 		global $conn;
-		$query = 'select id, user_image from users where username = "'.$username.'"';
+		$query = 'select * from users where username = "'.$username.'"';
 		$res = $conn->query($query);
 		if($res->num_rows == 1){
 			$id = $res->fetch_object();

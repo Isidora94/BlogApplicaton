@@ -10,7 +10,7 @@ body{
 
 header{
 	width: 100%;
-	background-color: #18bc9c;
+	background-color: rgba(0, 0, 0, 0.7);
 	height: 60px;
 }
 .container{
@@ -40,7 +40,7 @@ header li a{
 }
 
 header a:hover{
-	color: #146b6b;
+	/*color: #146b6b;*/
 }
 
 /*STYLISH LOGIN FORM*/
@@ -335,5 +335,7 @@ small {
 	margin-right: 20px;
 }
 
-
+textarea{
+	width: 100%;
+}
 

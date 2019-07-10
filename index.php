@@ -1,6 +1,8 @@
 <?php 
 session_start();
 
+// phpinfo();
+
 define('DOMAIN', $_SERVER['REQUEST_SCHEME'] .'://'. $_SERVER['HTTP_HOST']);
 require('./db.php');	
 

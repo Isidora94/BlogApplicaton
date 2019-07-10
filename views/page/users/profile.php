@@ -1,10 +1,20 @@
+<div id="user_info">
+	<div>
+		<p><?php echo ucfirst($this->data['user']->first_name); ?></p>
+		<p><?php echo ucfirst($this->data['user']->last_name); ?></p>
+		<p><?php echo ucfirst($this->data['user']->email); ?></p>
+	</div>
+	<img src="<?php echo DOMAIN; ?>/<?php echo $this->data['user']->user_image; ?>">
+</div>
+
+
 <div class="container">
 	<h1><?php echo $this->data['title']; ?></h1>
-	
-	<img id="profile_picture" src="<?php echo DOMAIN; ?>/<?php echo $this->data['profile_picture']; ?>">
+		
 
 	<?php foreach ($this->data['posts'] as $u_post): ?>
-		<h2><?php echo $u_post->title; ?></h2>
+
+		<h2><?php echo htmlspecialchars_decode($u_post->title); ?></h2>
 		<small>Posted on: <strong><?php echo $u_post->created_at; ?></strong> in category: <strong>
 			<?php foreach ($this->data['categories'] as $category) : ?>
 				<?php if($u_post->category_id === $category->id): ?>
@@ -14,7 +24,7 @@
 		</strong></small><br>
 		<img src="<?php echo DOMAIN ?>/<?php echo $u_post->post_image; ?>">
 		<div>
-			<?php echo $u_post->body; ?>
+			<?php echo htmlspecialchars_decode($u_post->body); ?>
 		</div>
 
 		<hr>
